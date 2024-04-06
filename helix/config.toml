@@ -1,0 +1,33 @@
+theme="catppuccin_mocha"
+
+[editor]
+true-color = true
+undercurl = true
+color-modes = true
+popup-border = "all"
+line-number = "relative"
+auto-completion = true
+auto-format = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+skip-levels = 0
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+G="goto_file_end"
+
+[keys.normal.space]
+q = ":quit"
+w = ":write"
