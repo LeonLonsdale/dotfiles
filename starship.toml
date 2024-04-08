@@ -1,38 +1,166 @@
-palette = "catppuccin_mocha"
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[character]
-success_symbol = "[[Ω](green) ❯](maroon)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+format = """
+[](vscode_blue)\
+$os\
+$username\
+[](bg:vscode_grey3 fg:vscode_blue)\
+$directory\
+[](fg:vscode_grey3 bg:vscode_grey5)\
+$git_branch\
+$git_status\
+[](fg:vscode_grey5 bg:vscode_grey7)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:vscode_grey7 bg:vscode_text)\
+$docker_context\
+[](fg:vscode_text bg:vscode_yellow)\
+$time\
+[ ](fg:vscode_yellow)\
+$line_break$character"""
+
+palette = 'vscode_dark'
+
+
+[palettes.vscode_dark]
+vscode_blue = "#0078D4"
+vscode_green = "#2EA043"
+vscode_red = "#F85149"
+vscode_yellow = "#d79921"
+vscode_grey1 = "#1F1F1F"
+vscode_grey2 = "#181818"
+vscode_grey3 = "#2B2B2B"
+vscode_grey4 = "#313131"
+vscode_grey5 = "#3C3C3C"
+vscode_grey6 = "#989898"
+vscode_grey7 = "#9D9D9D"
+vscode_text = "#D4D4D4"
+
+
+[os]
+disabled = false
+style = "bg:vscode_blue fg:vscode_text"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:vscode_blue fg:vscode_text"
+style_root = "bg:vscode_blue fg:vscode_text"
+format = '[ $user ]($style)'
 
 [directory]
-truncation_length = 4
-style = "bold lavender"
+style = "fg:vscode_blue bg:vscode_grey3"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:vscode_grey5"
+format = '[[ $symbol $branch ](fg:vscode_green bg:vscode_grey5)]($style)'
+
+[git_status]
+style = "bg:vscode_grey5"
+format = '[[($all_status$ahead_behind )](fg:vscode_green bg:vscode_grey5)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[c]
+symbol = " "
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[php]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[java]
+symbol = " "
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[python]
+symbol = ""
+style = "bg:vscode_grey7"
+format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:vscode_text"
+format = '[[ $symbol( $context) ](fg:vscode_grey1 bg:vscode_text)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:vscode_yellow"
+format = '[[  $time ](fg:vscode_grey1 bg:vscode_yellow)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:green)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[](bold fg:creen)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'
