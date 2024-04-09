@@ -6,8 +6,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.font = wezterm.font('MonoLisa', {weight= 'Regular'})
-config.font_size = 13.0
+config.font = wezterm.font('MonoLisa', {weight= 'Medium'})
+config.font_size = 14.0
 config.line_height = 1.2
 
 config.window_padding = {
