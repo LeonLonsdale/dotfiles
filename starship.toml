@@ -1,166 +1,164 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+[aws]
+symbol = "  "
 
-format = """
-[](vscode_blue)\
-$os\
-$username\
-[](bg:vscode_grey3 fg:vscode_blue)\
-$directory\
-[](fg:vscode_grey3 bg:vscode_grey5)\
-$git_branch\
-$git_status\
-[](fg:vscode_grey5 bg:vscode_grey7)\
-$c\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:vscode_grey7 bg:vscode_text)\
-$docker_context\
-[](fg:vscode_text bg:vscode_yellow)\
-$time\
-[ ](fg:vscode_yellow)\
-$line_break$character"""
-
-palette = 'vscode_dark'
-
-
-[palettes.vscode_dark]
-vscode_blue = "#0078D4"
-vscode_green = "#2EA043"
-vscode_red = "#F85149"
-vscode_yellow = "#d79921"
-vscode_grey1 = "#1F1F1F"
-vscode_grey2 = "#181818"
-vscode_grey3 = "#2B2B2B"
-vscode_grey4 = "#313131"
-vscode_grey5 = "#3C3C3C"
-vscode_grey6 = "#989898"
-vscode_grey7 = "#9D9D9D"
-vscode_text = "#D4D4D4"
-
-
-[os]
-disabled = false
-style = "bg:vscode_blue fg:vscode_text"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-
-[username]
-show_always = true
-style_user = "bg:vscode_blue fg:vscode_text"
-style_root = "bg:vscode_blue fg:vscode_text"
-format = '[ $user ]($style)'
-
-[directory]
-style = "fg:vscode_blue bg:vscode_grey3"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
-[git_branch]
-symbol = ""
-style = "bg:vscode_grey5"
-format = '[[ $symbol $branch ](fg:vscode_green bg:vscode_grey5)]($style)'
-
-[git_status]
-style = "bg:vscode_grey5"
-format = '[[($all_status$ahead_behind )](fg:vscode_green bg:vscode_grey5)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+[buf]
+symbol = " "
 
 [c]
 symbol = " "
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
 
-[rust]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
 
 [golang]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+symbol = " "
 
-[php]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
 
 [java]
 symbol = " "
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+
+[julia]
+symbol = " "
 
 [kotlin]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+symbol = " "
 
-[haskell]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
 
 [python]
-symbol = ""
-style = "bg:vscode_grey7"
-format = '[[ $symbol( $version) ](fg:vscode_grey1 bg:vscode_grey7)]($style)'
+symbol = " "
 
-[docker_context]
-symbol = ""
-style = "bg:vscode_text"
-format = '[[ $symbol( $context) ](fg:vscode_grey1 bg:vscode_text)]($style)'
+[rlang]
+symbol = "󰟔 "
 
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:vscode_yellow"
-format = '[[  $time ](fg:vscode_grey1 bg:vscode_yellow)]($style)'
+[ruby]
+symbol = " "
 
-[line_break]
-disabled = false
+[rust]
+symbol = " "
 
-[character]
-disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "

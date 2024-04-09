@@ -16,6 +16,14 @@ emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
 command = "vscode-eslint-language-server"
 args = ["--stdio"]
 
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-json]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+
 [language-server.eslint.config]
 codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
 format = { enable = true }
@@ -43,41 +51,47 @@ provideFormatter = true
 
 [[language]]
 name = "typescript"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss"]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "javascript"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "jsx"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "json"
+language-servers = ["vscode-json"]
 formatter = { command = "prettier", args = [ "--parser", "json" ] }
 auto-format = true
 
 [[language]]
 name = "html"
-language-servers = [ "vscode-html-language-server", "emmet-ls" ]
+language-servers = [ "vscode-html-language-server", "emmet-ls", "tailwindcss" ]
 formatter = { command = 'prettier', args = ["--parser", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
-language-servers = [ "vscode-css-language-server", "emmet-ls" ]
+language-servers = [ "vscode-css-language-server", "emmet-ls", "tailwindcss" ]
 formatter = { command = 'prettier', args = ["--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "prisma"
+language-servers = ["prisma-language-server"]
 auto-format = true
