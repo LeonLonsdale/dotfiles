@@ -7,6 +7,10 @@
 - `CTRL + S, I` to download the tmux theme
 - `CTRL + S, r` to reload the tmux config 
 
+# Starship
+
+Don't have / know Starship? [Check it out](https://starship.rs/)
+
 # Helix: Language Servers
 
 For the helix configuration to correctly use language servers and formatters, you'll need to install the following language servers globally.
