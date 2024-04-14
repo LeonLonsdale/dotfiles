@@ -1,5 +1,5 @@
-# theme="catppuccin_mocha"
-theme = "ayu_mirage"
+theme="catppuccin_mocha"
+# theme = "ayu_mirage"
 
 [editor]
 true-color = true
@@ -9,7 +9,9 @@ popup-border = "all"
 line-number = "relative"
 auto-completion = true
 auto-format = true
+text-width = 80
 rulers = [80, 120]
+indent-heuristic = "tree-sitter"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -21,7 +23,8 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-skip-levels = 0
+skip-levels = 1
+character = "╎" # "▏", "┆", "┊"
 
 [editor.soft-wrap]
 enable = true
