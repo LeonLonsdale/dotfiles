@@ -1,0 +1,27 @@
+theme = catppuccin-mocha
+
+# Font family
+font-family = MonoLisa
+font-style = Regular
+font-style-italic = Regular Italic
+font-style-bold = Bold
+font-style-bold-italic = Bold Italicfont-family = MonoLisa
+
+# Font size
+font-size = 18
+
+# Opacity of split windows
+unfocused-split-opacity = 0.97  
+
+# Cursor style
+cursor-style-blink = true
+
+# Clipboard settings
+clipboard-read = allow
+clipboard-write = allow
+
+# Allow option to work as alt on macos
+macos-option-as-alt = true
+
+# Always show ghostty as the title
+title = ghostty 
