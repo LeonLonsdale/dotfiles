@@ -1,7 +1,7 @@
 theme = catppuccin-mocha
 
 # Font family
-font-family = MonoLisa
+font-family = Cartograph CF
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
@@ -21,7 +21,9 @@ clipboard-read = allow
 clipboard-write = allow
 
 # Allow option to work as alt on macos
-macos-option-as-alt = true
+macos-option-as-alt = false
 
 # Always show ghostty as the title
 title = ghostty 
+
+keybind = super+shift+x=close_surface

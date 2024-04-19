@@ -10,7 +10,7 @@ line-number = "relative"
 auto-completion = true
 auto-format = true
 text-width = 80
-rulers = [80, 120]
+rulers = [80]
 indent-heuristic = "tree-sitter"
 
 [editor.cursor-shape]
