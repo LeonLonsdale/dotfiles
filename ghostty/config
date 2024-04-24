@@ -1,17 +1,17 @@
 theme = catppuccin-mocha
 
 # Font family
-font-family = Cartograph CF
+font-family = "MonoLisa"
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
-font-style-bold-italic = Bold Italicfont-family = MonoLisa
+font-thicken = true
 
 # Font size
-font-size = 18
+font-size = 16
 
 # Opacity of split windows
-unfocused-split-opacity = 0.97  
+# background-opacity = 0.95  
 
 # Cursor style
 cursor-style-blink = true
