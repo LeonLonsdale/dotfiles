@@ -31,18 +31,16 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			config = function()
-				require("mason-tool-installer").setup({
-					ensure_installed = tools,
-					auto_update = true,
-					run_on_start = true,
-					start_delay = 2000,
-					debounce_hours = 12,
-				})
-			end,
 		},
 		config = function()
 			require("mason").setup()
+			require("mason-tool-installer").setup({
+				ensure_installed = tools,
+				auto_update = true,
+				run_on_start = true,
+				start_delay = 2000,
+				debounce_hours = 12,
+			})
 		end,
 	},
 	{
