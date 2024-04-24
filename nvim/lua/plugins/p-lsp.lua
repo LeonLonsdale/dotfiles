@@ -16,7 +16,15 @@ local formatters = {
 	"eslint_d",
 }
 
-local tools = vim.tbl_keys(vim.tbl_deep_extend("force", {}, servers, formatters))
+local tools = {}
+
+for _, server in ipairs(servers) do
+	table.insert(tools, server)
+end
+
+for _, formatter in ipairs(formatters) do
+	table.insert(tools, formatter)
+end
 
 return {
 	{
