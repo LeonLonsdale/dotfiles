@@ -8,7 +8,7 @@ font-style-bold = Bold
 font-thicken = true
 
 # Font size
-font-size = 16
+font-size = 14
 
 # Opacity of split windows
 # background-opacity = 0.95  
