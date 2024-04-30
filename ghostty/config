@@ -1,7 +1,11 @@
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
+# theme = catppuccin-latte
+theme = ayu
+
 
 # Font family
-font-family = "MonoLisa"
+# font-family = "MonoLisa"
+font-family = "Geist Mono"
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
