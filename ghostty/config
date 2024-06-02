@@ -4,8 +4,9 @@ theme = ayu
 
 
 # Font family
+# font-family = "Geist Mono"
+font-family = "Cartograph CF"
 # font-family = "MonoLisa"
-font-family = "Geist Mono"
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
