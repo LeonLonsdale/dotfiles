@@ -1,5 +1,5 @@
-theme = "Github Dark"
-
+#theme = "Github Dark"
+theme = "catppuccin-frappe"
 
 # Font
 #font-family = "Cartograph CF"
