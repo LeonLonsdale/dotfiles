@@ -1,0 +1,32 @@
+theme = "Github Dark"
+
+
+# Font
+#font-family = "Cartograph CF"
+#font-family = "MonoLisa"
+#font-family = "Geist Mono"
+font-family = "Ellograph CF"
+font-style = Regular
+font-style-italic = Regular Italic
+font-style-bold = Bold
+font-thicken = true
+font-size = 16
+
+# Opacity of split windows
+# background-opacity = 0.95  
+
+# Cursor style
+cursor-style-blink = true
+
+# Clipboard settings
+clipboard-read = allow
+clipboard-write = allow
+
+# Allow option to work as alt on macos
+macos-option-as-alt = false
+
+# Always show ghostty as the title
+title = ghostty 
+
+# Bindings
+keybind = super+shift+x=close_surface
