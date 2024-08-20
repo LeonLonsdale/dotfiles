@@ -1,12 +1,19 @@
-#theme = "Github Dark"
-#theme = "catppuccin-frappe"
-theme = "Ayu Mirage"
-
+#theme = "Github"
+#theme = "catppuccin-macchiato"
+#theme = "Ayu Mirage"
+#theme = "HaX0R_GR33N"
+#theme = "dark+"
+#theme = "rose-pine-moon"
+theme = "nightfox"
+ 
 # Font
+#font-family = "CommitMono-sennyin"
 #font-family = "Cartograph CF"
 font-family = "MonoLisa"
 #font-family = "Geist Mono"
 #font-family = "Ellograph CF"
+#font-family = "Operator Mono"
+
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
