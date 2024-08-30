@@ -1,9 +1,4 @@
-#theme="ayu_mirage"
-#theme="catppuccin_macchiato"
-# theme="heisenberg"
-#theme="dark_plus"
-#theme="rose_pine_moon"
-theme="nightfox"
+theme="jetbrains_dark"
 
 [editor]
 true-color = true

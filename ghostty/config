@@ -1,27 +1,15 @@
-#theme = "Github"
-#theme = "catppuccin-macchiato"
-#theme = "Ayu Mirage"
-#theme = "HaX0R_GR33N"
-#theme = "dark+"
-#theme = "rose-pine-moon"
-theme = "nightfox"
+theme = "Jetbrains Darcula"
  
 # Font
-#font-family = "CommitMono-sennyin"
-#font-family = "Cartograph CF"
-font-family = "MonoLisa"
-#font-family = "Geist Mono"
-#font-family = "Ellograph CF"
-#font-family = "Operator Mono"
-
+font-family = "JetBrains Mono"
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 17
+font-size = 14
 
 # Opacity of split windows
-# background-opacity = 0.95  
+background-opacity = 0.95  
 
 # Cursor style
 cursor-style-blink = true
