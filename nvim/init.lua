@@ -57,12 +57,10 @@ local opts = {}
 
 require("lazy").setup("plugins", opts)
 
---vim.cmd.colorscheme("darcula-dark")
---vim.cmd.colorscheme("catppuccin-macchiato")
-
 require("config.mappings")
 
-local jetbrains_new_dark = require("custom.jetbrains_new_dark")
-for group, settings in pairs(jetbrains_new_dark) do
+-- Apply custom theme
+local ionz_theme_dark = require("custom.ionz_theme_dark")
+for group, settings in pairs(ionz_theme_dark) do
   vim.api.nvim_set_hl(0, group, settings)
 end

@@ -1,5 +1,27 @@
 return {
 	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"gopls",
+					"html",
+					"tailwindcss",
+					"cssls",
+					"tsserver",
+					"prismals",
+				},
+			})
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		event = { "BufReadPost" },
@@ -22,26 +44,7 @@ return {
 				"tsserver",
 				"prismals",
 			}
-			local formatters = {
-				prettierd = {},
-				prettier = {},
-				stylua = {},
-			}
-			local manually_installed_servers = {}
-			local mason_tools_to_install = vim.tbl_keys(vim.tbl_deep_extend("force", {}, servers, formatters))
-			local ensure_installed = vim.tbl_filter(function(name)
-				return not vim.tbl_contains(manually_installed_servers, name)
-			end, mason_tools_to_install)
-
 			-- Ensure the servers are installed
-			require("mason-tool-installer").setup({
-				auto_update = true,
-				run_on_start = true,
-				start_delay = 3000,
-				debounce_hours = 12,
-				ensure_installed = ensure_installed,
-			})
-
 			mason_lspconfig.setup_handlers({
 				-- Default handler for all servers
 				function(server_name)
@@ -49,26 +52,6 @@ return {
 						capabilities = capabilities,
 					})
 				end,
-			})
-
-			require("mason").setup({
-				ui = {
-					border = "rounded",
-				},
-			})
-
-			require("mason-lspconfig").setup({
-				ensure_installed = servers,
-			})
-
-			-- Configure borderd for LspInfo ui
-			require("lspconfig.ui.windows").default_options.border = "rounded"
-
-			-- Configure diagnostics border
-			vim.diagnostic.config({
-				float = {
-					border = "rounded",
-				},
 			})
 
 			-- Setup LspAttach and LspDetach autocmds
@@ -99,30 +82,5 @@ return {
 				end,
 			})
 		end,
-	},
-	{
-		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
-		opts = {
-			notify_on_error = false,
-			default_format_opts = {
-				async = true,
-				timeout_ms = 500,
-				lsp_format = "fallback",
-			},
-			format_after_save = {
-				async = true,
-				timeout_ms = 500,
-				lsp_format = "fallback",
-			},
-			formatters_by_ft = {
-				javascript = { "biome", "prettierd", "prettier" },
-				typescript = { "biome", "prettierd", "prettier" },
-				typescriptreact = { "biome", "prettierd", "prettier" },
-				svelte = { "prettierd", "prettier " },
-				lua = { "stylua" },
-			},
-		},
 	},
 }
