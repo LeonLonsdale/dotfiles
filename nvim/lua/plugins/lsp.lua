@@ -64,6 +64,7 @@ return {
 			-- Configure borderd for LspInfo ui
 			require("lspconfig.ui.windows").default_options.border = "rounded"
 
+
 			-- Configure diagnostics border
 			vim.diagnostic.config({
 				float = {
@@ -122,6 +123,7 @@ return {
 				typescriptreact = { "biome", "prettierd", "prettier" },
 				svelte = { "prettierd", "prettier " },
 				lua = { "stylua" },
+				go = { "gopls"}
 			},
 		},
 	},

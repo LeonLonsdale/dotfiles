@@ -31,3 +31,10 @@ map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
 map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
 map("x", "<A-Up>", ":move '<-2<CR>gv-gv", { desc = "Move selected lines up" })
 map("x", "<A-Down>", ":move '>+1<CR>gv-gv", { desc = "Move selected lines down" })
+
+-- Add keymap for Cmd + A to save files
+-- In normal mode, <Cmd + A> will save the file
+map("n", "<D-s>", ":w<CR>", { desc = "Save file" })
+
+-- In insert mode, <Cmd + A> will exit insert mode and save the file
+map("i", "<D-s>", "<Esc>:w<CR>", { desc = "Exit insert mode and save file" })

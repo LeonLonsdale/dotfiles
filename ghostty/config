@@ -1,12 +1,13 @@
 theme = "Jetbrains Darcula"
  
 # Font
-font-family = "JetBrains Mono"
+#font-family = "JetBrains Mono"
+font-family = "CommitMonoionz500"
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 14
+font-size = 15
 
 # Opacity of split windows
 background-opacity = 0.95  

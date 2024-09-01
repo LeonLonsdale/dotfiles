@@ -5,7 +5,7 @@ local colors = {
     dark_black = "#000000",
     bright_black = "#3C3F41",
     white = "#A9B7C6",
-    comments = "#808080",
+    grey = "#808080",
     red = "#FF6B68",
     bright_red = "#FF6B68",  -- You may adjust this if needed
     pale_red = "#F5B3B3",  -- New pale red
@@ -31,7 +31,7 @@ local colors = {
 local theme = {
     -- UI elements
     Normal = { fg = colors.fg, bg = colors.bg },
-    Comment = { fg = colors.comments },
+    Comment = { fg = colors.grey },
     CursorLine = { bg = colors.black },
     CursorColumn = { bg = colors.black },
     Visual = { bg = colors.bright_black },
@@ -67,7 +67,7 @@ local theme = {
     ["@attribute"] = { fg = colors.yellow },
     ["@boolean"] = { fg = colors.magenta },
     ["@character"] = { fg = colors.green },
-    ["@comment"] = { fg = colors.bright_black, italic = true },
+    ["@comment"] = { fg = colors.grey, italic = true },
     ["@conditional"] = { fg = colors.orange },
     ["@constant"] = { fg = colors.red },
     ["@constant.builtin"] = { fg = colors.red },
