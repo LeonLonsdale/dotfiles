@@ -7,7 +7,7 @@ font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 15
+font-size = 16
 
 # Opacity of split windows
 background-opacity = 0.95  
