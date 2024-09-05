@@ -92,3 +92,4 @@ vim.api.nvim_create_autocmd("LspDetach", {
     vim.api.nvim_buf_del_keymap(bufnr, "n", "]d")
   end,
 })
+

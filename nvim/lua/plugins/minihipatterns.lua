@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.hipatterns",
-  event = "BufReadPre",
-  opts = {},
+	"echasnovski/mini.hipatterns",
+	event = "BufReadPre",
+	opts = {},
 }
