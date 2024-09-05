@@ -11,13 +11,13 @@ local common_opts = { noremap = true, silent = true }
 
 -- Utility function for setting key mappings
 local function map(mode, lhs, rhs, opts)
-  opts = opts or {} -- Default to an empty table if no options are provided
-  for k, v in pairs(common_opts) do
-    if opts[k] == nil then
-      opts[k] = v
-    end
-  end
-  vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {} -- Default to an empty table if no options are provided
+	for k, v in pairs(common_opts) do
+		if opts[k] == nil then
+			opts[k] = v
+		end
+	end
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- Example usage of the utility function with descriptions
@@ -59,37 +59,39 @@ map("n", "<leader>bp", ":bprevious<CR>", { desc = "Switch to the previous buffer
 map("n", "<leader>bx", ":bdelete<CR>", { desc = "Close the current buffer" })
 map("n", "<leader>bd", ":%bd|e#<CR>", { desc = "Close all buffers except the current one" })
 
+-- Lazygit keybind
+map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit" })
+
 -- Setup LspAttach and LspDetach autocmds
 vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    local bufnr = args.buf
+	callback = function(args)
+		local bufnr = args.buf
 
-    map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
-    map("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Hover info", buffer = bufnr })
-    map("n", "<leader>ci", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = bufnr })
-    map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Show references", buffer = bufnr })
-    map("n", "<leader>cn", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = bufnr })
-    map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
-    map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format code", buffer = bufnr })
-    map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic", buffer = bufnr })
-    map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic", buffer = bufnr })
-    map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic", buffer = bufnr })
-  end,
+		map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
+		map("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Hover info", buffer = bufnr })
+		map("n", "<leader>ci", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = bufnr })
+		map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Show references", buffer = bufnr })
+		map("n", "<leader>cn", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = bufnr })
+		map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
+		map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format code", buffer = bufnr })
+		map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic", buffer = bufnr })
+		map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic", buffer = bufnr })
+		map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic", buffer = bufnr })
+	end,
 })
 vim.api.nvim_create_autocmd("LspDetach", {
-  callback = function(args)
-    local bufnr = args.buf
+	callback = function(args)
+		local bufnr = args.buf
 
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cd")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ch")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ci")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cr")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cn")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ca")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cf")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>e")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "[d")
-    vim.api.nvim_buf_del_keymap(bufnr, "n", "]d")
-  end,
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cd")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ch")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ci")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cr")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cn")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ca")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>cf")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>e")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "[d")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "]d")
+	end,
 })
-
