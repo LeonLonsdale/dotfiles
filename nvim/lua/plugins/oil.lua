@@ -13,6 +13,12 @@ return {
 					winblend = 0,
 					winhl = "Normal:OilFloatBackground,FloatBorder:OilFloatBorder",
 				},
+				preview = {
+					winblend = 0,
+				},
+				progress = {
+					winblend = 0,
+				},
 			},
 		})
 	end,
