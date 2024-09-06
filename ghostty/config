@@ -1,18 +1,13 @@
-# theme = "Jetbrains Darcula"
-#theme = "catppuccin-macchiato"
 theme = "Github Dark"
 
 # Font
-#font-family = "JetBrains Mono"
-#font-family = "CommitMonoionz500"
-font-family = "Ellograph CF"
-#font-family = "Victor Mono"
+font-family = "MonoLisa"
 
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 17
+font-size = 16
 
 # Opacity of split windows
 background-opacity = 0.85  
