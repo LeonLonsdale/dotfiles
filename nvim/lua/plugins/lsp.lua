@@ -10,9 +10,17 @@ return {
 		},
 
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
+
+			-- Default handlers for LSP
+			local default_handlers = {
+				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+			}
+
 			local tsserver_inlay_hints = {
 				includeInlayEnumMemberValueHints = true,
 				includeInlayFunctionLikeReturnTypeHints = true,
@@ -23,7 +31,9 @@ return {
 				includeInlayVariableTypeHints = true,
 				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
 			}
+
 			local servers = {
+				biome = {},
 				lua_ls = {},
 				gopls = {
 					settings = {
@@ -42,7 +52,17 @@ return {
 				html = {},
 				tailwindcss = {},
 				cssls = {},
-				tsserver = {},
+				tsserver = {
+					settings = {
+						maxTsServerMemory = 12288,
+						typescript = {
+							inlayHints = tsserver_inlay_hints,
+						},
+						javascript = {
+							inlayHints = tsserver_inlay_hints,
+						},
+					},
+				},
 				prismals = {},
 			}
 
@@ -72,6 +92,7 @@ return {
 					local config = servers[server_name] or {}
 					server_name = server_name == "tsserver" and "ts_ls" or server_name
 					config.capabilities = capabilities -- Add LSP capabilities
+					config.handlers = vim.tbl_deep_extend("force", {}, default_handlers, config.handlers or {})
 					lspconfig[server_name].setup(config)
 				end,
 			})
@@ -84,15 +105,6 @@ return {
 
 			mason_lspconfig.setup({
 				ensure_installed = servers,
-			})
-
-			-- Configure borders for LSP floating windows
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
-			})
-
-			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-				border = "rounded",
 			})
 
 			-- Configure borders for LspInfo UI

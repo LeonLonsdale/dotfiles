@@ -1,4 +1,5 @@
-theme="jetbrains_dark"
+# theme="jetbrains_dark"
+theme="theme"
 
 [editor]
 true-color = true
@@ -6,6 +7,7 @@ undercurl = true
 color-modes = true
 popup-border = "all"
 line-number = "relative"
+cursorline = true
 auto-completion = true
 auto-format = true
 text-width = 80
@@ -38,7 +40,16 @@ esc = ["collapse_selection", "keep_primary_selection"]
 G="goto_file_end"
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+"{" = ["goto_next_paragraph"]
+"}" = ["goto_prev_paragraph"]
+"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
 
 [keys.normal.space]
 q = ":quit"
 w = ":write"
+"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
+
+[keys.select]
+"{" = ["goto_next_paragraph"]
+"}" = ["goto_prev_paragraph"]
+

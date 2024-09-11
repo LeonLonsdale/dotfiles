@@ -1,21 +1,16 @@
-theme = "catppuccin-macchiato"
-#theme = "ayu mirage"
-#theme = "nord"
+theme = "Github Dark"
 
 # Font
 font-family = "MonoLisa"
-#font-family = "Ellograph CF"
-#font-family = "Cartograph CF"
-#font-family = "Jetbrains Mono"
 
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 16 
+font-size = 16
 
 # Opacity of split windows
-#background-opacity = 0.88
+background-opacity = 0.85  
 
 # Cursor style
 cursor-style-blink = true
@@ -29,7 +24,6 @@ macos-option-as-alt = false
 
 # Always show ghostty as the title
 title = ghostty 
-gtk-titlebar = false
 
 # Bindings
 keybind = super+shift+x=close_surface

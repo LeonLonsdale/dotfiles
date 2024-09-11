@@ -1,7 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 -- ===========================================
 -- Keymaps
 -- ===========================================
@@ -62,10 +58,51 @@ map("n", "<leader>bd", ":%bd|e#<CR>", { desc = "Close all buffers except the cur
 -- Lazygit keybind
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit" })
 
+-- Define the function to organize imports based on language
+local function organize_imports()
+	local clients = vim.lsp.get_active_clients()
+	if #clients == 0 then
+		print("No active LSP clients")
+		return
+	end
+
+	local bufnr = vim.api.nvim_get_current_buf()
+	local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+
+	local commands = {
+		typescript = "typescript.organizeImports",
+		typescriptreact = "typescript.organizeImports",
+		javascript = "typescript.organizeImports",
+		javascriptreact = "typescript.organizeImports",
+		python = "python.sortImports", -- Adjust this based on your setup
+		-- Add other languages and their commands here
+	}
+
+	local command = commands[filetype]
+	if not command then
+		print("No command available for filetype: " .. filetype)
+		return
+	end
+
+	for _, client in ipairs(clients) do
+		if client.server_capabilities.execute_command then
+			vim.lsp.buf.execute_command({ command = command })
+			return
+		end
+	end
+
+	print("No LSP clients support the execute_command capability")
+end
 -- Setup LspAttach and LspDetach autocmds
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local bufnr = args.buf
+
+		local function toggle_inlay_hints()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+		end
+		-- Create key mappings
+		map("n", "<leader>ih", toggle_inlay_hints, { desc = "Toggle inlay hints", buffer = bufnr })
 
 		map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
 		map("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Hover info", buffer = bufnr })
@@ -77,6 +114,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic", buffer = bufnr })
 		map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic", buffer = bufnr })
 		map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic", buffer = bufnr })
+		map(
+			"n",
+			"<leader>ii",
+			'<cmd>lua vim.lsp.buf.execute_command({ command = "typescript.organizeImports" })<CR>',
+			{ desc = "Organize imports", buffer = bufnr }
+		)
 	end,
 })
 vim.api.nvim_create_autocmd("LspDetach", {
@@ -93,5 +136,6 @@ vim.api.nvim_create_autocmd("LspDetach", {
 		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>e")
 		vim.api.nvim_buf_del_keymap(bufnr, "n", "[d")
 		vim.api.nvim_buf_del_keymap(bufnr, "n", "]d")
+		vim.api.nvim_buf_del_keymap(bufnr, "n", "<leader>ii")
 	end,
 })

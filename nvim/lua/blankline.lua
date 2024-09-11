@@ -58,7 +58,7 @@ return {
 		main = "ibl",
 		config = function(_, opts)
 			-- Highlight group configuration
-			vim.api.nvim_set_hl(0, "IndentBlanklineScope", { fg = "#E06C75", bold = true }) -- Custom color for the scope
+			vim.api.nvim_set_hl(0, "IndentBlanklineScope", { fg = "#FFFFFF", bold = true }) -- Custom color for the scope
 
 			-- Set up ibl with the provided options
 			require("ibl").setup(opts)
