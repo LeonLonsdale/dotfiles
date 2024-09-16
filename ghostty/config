@@ -15,7 +15,7 @@ font-thicken = true
 font-size = 16 
 
 # Opacity of split windows
-background-opacity = 0.88
+background-opacity = 0.80
 
 # Cursor style
 cursor-style-blink = true
