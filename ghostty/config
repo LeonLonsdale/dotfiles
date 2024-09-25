@@ -1,6 +1,8 @@
 theme = "catppuccin-macchiato"
 #theme = "ayu mirage"
-#theme = "nord"
+#theme = "Github Dark"
+#theme = "Peppermint"
+#theme = "Aardvark Blue"
 
 # Font
 font-family = "MonoLisa"
@@ -12,10 +14,10 @@ font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 16 
+font-size = 15 
 
 # Opacity of split windows
-background-opacity = 0.80
+background-opacity = 0.92
 
 # Cursor style
 cursor-style-blink = true
