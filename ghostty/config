@@ -1,4 +1,4 @@
-theme = "catppuccin-macchiato"
+theme = "catppuccin-frappe"
 #theme = "ayu mirage"
 #theme = "Github Dark"
 #theme = "Peppermint"
@@ -6,18 +6,20 @@ theme = "catppuccin-macchiato"
 
 # Font
 font-family = "MonoLisa"
-#font-family = "Ellograph CF"
-#font-family = "Cartograph CF"
-#font-family = "Jetbrains Mono"
+# font-family = "Ellograph CF"
+# font-family = "Cartograph CF"
+# font-family = "Jetbrains Mono"
+# font-family = "Geist Mono"
 
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 15 
+font-size = 15
+adjust-cell-height = 20%
 
 # Opacity of split windows
-background-opacity = 0.92
+# background-opacity = 0.98
 
 # Cursor style
 cursor-style-blink = true
