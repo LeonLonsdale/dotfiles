@@ -1,11 +1,13 @@
-theme = "catppuccin-frappe"
-#theme = "ayu mirage"
-#theme = "Github Dark"
-#theme = "Peppermint"
-#theme = "Aardvark Blue"
+#theme = "catppuccin-macchiato"
+# theme = "ayu mirage"
+# theme = "Github Dark"
+#theme = "Dark+"
+#theme = "GruvboxDarkHard"
+theme = "tokyonight"
+
 
 # Font
-font-family = "MonoLisa"
+#font-family = "MonoLisa Leon"
 # font-family = "Ellograph CF"
 # font-family = "Cartograph CF"
 # font-family = "Jetbrains Mono"
@@ -15,11 +17,10 @@ font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-thicken = true
-font-size = 15
+font-size = 14
 adjust-cell-height = 20%
 
-# Opacity of split windows
-# background-opacity = 0.98
+ background-opacity = 0.95
 
 # Cursor style
 cursor-style-blink = true
@@ -32,7 +33,7 @@ clipboard-write = allow
 macos-option-as-alt = false
 
 # Always show ghostty as the title
-title = ghostty 
+title = 👻 
 gtk-titlebar = false
 
 # Bindings

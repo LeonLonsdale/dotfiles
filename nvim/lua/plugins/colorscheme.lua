@@ -1,12 +1,44 @@
 return {
+
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup({
+				style = "night",
+				transparent = true,
+				terminal_colors = true,
+				styles = {
+					floats = "transparent",
+					sidebars = "transparent",
+				},
+			})
+			vim.cmd.colorscheme("tokyonight")
+		end,
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = function()
+			require("gruvbox").setup({
+				tranrparent_mode = true,
+				undercurl = true,
+				underline = true,
+				transparent_mode = true,
+			})
+			-- vim.o.background = "dark"
+			-- vim.cmd.colorscheme("gruvbox")
+		end,
+	},
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				-- transparent_background = true,
-				flavour = "frappe",
+				transparent_background = true,
+				flavour = "Macchiato",
 				integrations = {
 					cmp = true,
 					telescope = true,
@@ -21,7 +53,7 @@ return {
 					native_lsp = { enabled = true },
 				},
 			})
-			vim.cmd.colorscheme("catppuccin")
+			--vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{
@@ -56,18 +88,17 @@ return {
 			-- vim.cmd("colorscheme github_dark_default")
 		end,
 	},
-	--	{
-	--	"shaunsingh/nord.nvim",
-	--lazy = false,
-	--priority = 1000,
-	--config = function()
-	--vim.g.nord_contrast = true
-	--vim.g.nord_borders = true
-	--vim.g.nord_disable_background = false
-	--vim.g.nord_italic = false
-	--vim.g.nord_uniform_diff_background = true
-	--vim.g.nord_bold = false
-	--require("nord").set()
-	--end,
-	--},
+	{
+		"Mofiqul/vscode.nvim",
+		config = function()
+			require("vscode").setup({
+				transparent = true,
+				group_overrides = {
+					Comment = { fg = "#808080", bg = "NONE" },
+				},
+			})
+
+			-- vim.cmd("colorscheme vscode")
+		end,
+	},
 }
